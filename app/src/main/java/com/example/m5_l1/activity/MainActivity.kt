@@ -1,8 +1,9 @@
-package com.example.m5_l1
+package com.example.m5_l1.activity
 
 import CirclePagerIndicatorDecoration
 import android.annotation.SuppressLint
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 
 
@@ -11,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.PagerSnapHelper
 import androidx.recyclerview.widget.RecyclerView
+import com.example.m5_l1.R
 
 import com.example.m5_l1.adapter.CustomAdapter
 import com.example.m5_l1.model.Fragment
@@ -57,25 +59,6 @@ class MainActivity : AppCompatActivity() {
         rvMain.addItemDecoration(CirclePagerIndicatorDecoration())
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //        rvMain.setOnScrollListener(object : RecyclerView.OnScrollListener() {
 //            override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
 //                super.onScrollStateChanged(recyclerView, newState)
@@ -117,6 +100,8 @@ class MainActivity : AppCompatActivity() {
 
         return list
     }
+
+
 
 
 }

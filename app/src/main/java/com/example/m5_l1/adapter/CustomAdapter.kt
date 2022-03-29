@@ -6,24 +6,23 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.airbnb.lottie.LottieAnimationView
 
 import com.example.m5_l1.R
 import com.example.m5_l1.model.Fragment
+import com.google.android.material.button.MaterialButton
 
 class CustomAdapter(val context: Context, val fragment:List<Fragment>): RecyclerView.Adapter<RecyclerView.ViewHolder>(){
 
     private val TYPE_SIMPLE = 0
     private val TYPE_Button = 1
 
-
+  
     override fun getItemViewType(position: Int): Int {
         return if (position == 2) TYPE_Button else TYPE_SIMPLE
     }
-
-
-
 
 
     override fun getItemCount(): Int {
@@ -45,6 +44,8 @@ class CustomAdapter(val context: Context, val fragment:List<Fragment>): Recycler
         val tvDescriptionBtn = view.findViewById<TextView>(R.id.tv_description_btn)
 
         val lottieSimpleBtn = view.findViewById<LottieAnimationView>(R.id.lottie_btn)
+
+        val btnStart = view.findViewById<MaterialButton>(R.id.btn_start)
 
     }
 
@@ -74,11 +75,17 @@ class CustomAdapter(val context: Context, val fragment:List<Fragment>): Recycler
 
                 tvTitleBtn.text = fragment.title
                 tvDescriptionBtn.text = fragment.description
-
                 lottieSimpleBtn.setAnimation(fragment.lottie)
+
+                btnStart.setOnClickListener {
+                    Toast.makeText(context, "Bosildi", Toast.LENGTH_SHORT).show()
+
+                }
             }
         }
     }
+
+
 
 
 }
